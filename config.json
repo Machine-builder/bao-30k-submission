@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.6.json",
+	"author": "Bedrock Add-ons",
+	"name": "30KLBJ",
+	"packs": {
+		"behaviorPack": "./packs/BP",
+		"resourcePack": "./packs/RP"
+	},
+	"regolith": {
+		"dataPath": "./packs/data",
+		"filterDefinitions": {
+			"gametests": {
+				"url": "github.com/Bedrock-OSS/regolith-filters",
+				"version": "1.4.2"
+			}
+		},
+		"formatVersion": "1.6.0",
+		"profiles": {
+			"default": {
+				"export": {
+					"build": "standard",
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": [
+					{
+						"filter": "gametests",
+						"settings": {
+							"buildOptions": {
+								"bundle": true,
+								"entryPoints": [
+									"BP/scripts/internal/init.ts"
+								],
+								"format": "esm",
+								"minify": false,
+								"target": "es2020"
+							},
+							"moduleUUID": "7d15e01d-07e3-4551-8666-323e947ead0c",
+							"modules": [
+								"@minecraft/server@2.4.0",
+								"@minecraft/server-ui@2.0.0"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

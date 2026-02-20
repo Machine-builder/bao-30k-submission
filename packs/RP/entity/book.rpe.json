@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "bao_30k_machine:book",
+      "materials": {
+        "default": "bat_v2",
+        "armor": "bao_30k_machine_enchantment_glint"
+      },
+      "textures": {
+        "default": "textures/bao_30k/machine/entity/book",
+        "armor": "textures/bao_30k/machine/enchantment_glint"
+      },
+      "geometry": {
+        "default": "geometry.bao_30k_machine.book",
+        "armor": "geometry.bao_30k_machine.book.armor"
+      },
+      "scripts": {
+        "animate": [
+          "flying"
+        ]
+      },
+      "animations": {
+        "flying": "animation.bao_30k_machine.book.flying"
+      },
+      "render_controllers": [
+        "controller.render.bao_30k_machine.book",
+        {"controller.render.bao_30k_machine.book.armor": "q.variant == 1"}
+      ],
+      "spawn_egg": {
+        "texture": "bao_30k_machine:book_spawn_egg"
+      }
+    }
+  }
+}

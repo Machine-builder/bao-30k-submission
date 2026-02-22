@@ -14,7 +14,7 @@
 			"textures": "textures/bao_30k/base/lucky_block_side_b"
 		},
 		"bao_30k_machine:void_bacteria": {
-			"textures": "textures/bao_30k/machine/void_bacteria"
+			"textures": "textures/bao_30k/machine/blocks/void_bacteria"
 		}
 	}
 }

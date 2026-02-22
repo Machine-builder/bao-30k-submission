@@ -18,7 +18,15 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 99
             },
-            "minecraft:loot": "loot_tables/empty.json"
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:geometry": {
+                "identifier": "minecraft:geometry.full_block"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "bao_30k_machine:void_bacteria"
+                }
+            }
         }
     }
 }

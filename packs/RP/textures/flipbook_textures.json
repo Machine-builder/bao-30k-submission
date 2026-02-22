@@ -1,0 +1,8 @@
+[
+  {
+    "flipbook_texture": "textures/bao_30k/machine/blocks/void_bacteria",
+    "atlas_tile": "bao_30k_machine:void_bacteria",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  }
+]

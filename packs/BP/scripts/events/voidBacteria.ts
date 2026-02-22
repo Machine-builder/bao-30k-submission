@@ -1,4 +1,5 @@
-import { Block, system, world } from "@minecraft/server";
+import { Block, system, TicksPerSecond, world } from "@minecraft/server";
+import { LuckyBlockBreakEvent } from "../internal/init";
 
 
 system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
@@ -35,6 +36,19 @@ system.beforeEvents.startup.subscribe(({ blockComponentRegistry }) => {
                 // Decay to air
                 block.setType("minecraft:air");
             }
+        }),
+        onStepOn: (e => {
+            const entity = e.entity;
+            if (!entity) return;
+            entity.addEffect(`wither`, 5*TicksPerSecond, {amplifier: 1});
+            entity.addEffect(`nausea`, 2*TicksPerSecond, {amplifier: 1});
         })
     })
 })
+
+export default function placeVoidBacteria({ block, dimension, player }: LuckyBlockBreakEvent) {
+    try {
+        block.setType(`bao_30k_machine:void_bacteria`);
+        player.sendMessage({text: `§0Can you stop the infection?`})
+    } catch {}
+}

@@ -9,5 +9,8 @@
             "east": "bao_30k:lucky_block",
             "west": "bao_30k:lucky_block"
         }
+    },
+    "bao_30k_machine:void_bacteria": {
+        "textures": "bao_30k_machine:void_bacteria"
     }
 }

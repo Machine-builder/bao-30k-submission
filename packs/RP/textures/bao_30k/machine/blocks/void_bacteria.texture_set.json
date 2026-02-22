@@ -1,0 +1,7 @@
+﻿{
+    "format_version": "1.21.30",
+    "minecraft:texture_set": {
+        "color": "void_bacteria",
+        "metalness_emissive_roughness_subsurface": "void_bacteria_mers"
+    }
+}

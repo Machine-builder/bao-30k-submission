@@ -15,6 +15,9 @@ import anvilRain from "./events/anvilRain";
 import singleValuableItem from "./events/singleValuableItem";
 import villager from "./events/villager";
 
+import "./events/voidBacteria";
+import placeVoidBacteria from "./events/voidBacteria";
+
 export default {
   author: "MACHINE_BUILDER",
 
@@ -28,6 +31,7 @@ export default {
     jebSheepExplosion,
     anvilRain,
     singleValuableItem,
-    villager
+    villager,
+    placeVoidBacteria
   ]
 } as LuckyBlockEventData

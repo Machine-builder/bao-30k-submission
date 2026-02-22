@@ -1,3 +1,4 @@
 tile.bao_30k:lucky_block.name=§dBAO 30k Lucky Block
+tile.bao_30k_machine:void_bacteria.name=§0§kVoid Bacteria
 item.spawn_egg.entity.bao_30k_machine:book.name=Spawn Flying Book
 entity.bao_30k_machine:book.name=Book

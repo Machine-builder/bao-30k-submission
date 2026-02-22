@@ -1,6 +1,6 @@
 import { Block, Dimension, LiquidType, system, Vector3, world } from "@minecraft/server";
 import { LuckyBlockBreakEvent } from "../internal/init";
-import { chooseFromArray, distanceSquaredVector3, distanceVector3, randomWithinRange } from "./utils";
+import { chooseFromArray, chooseFromWeightedArray, distanceSquaredVector3, distanceVector3, randomWithinRange } from "./utils";
 
 function replaceBlock(dimension: Dimension, location: Vector3, type: string) {
     let block: Block | undefined;
@@ -53,7 +53,7 @@ export default function nearbyCorruption({ block, dimension }: LuckyBlockBreakEv
     corruptions.push({
         dimension: dimension,
         blockQueue: onlyBlockLocations,
-        oreRarity: randomWithinRange(0.65, 0.9)
+        oreRarity: randomWithinRange(0.65, 0.8)
     });
 
     if (corruptionUpdateInterval === undefined) {
@@ -75,12 +75,20 @@ function updateCorruption(corruption: ActiveCorruption): boolean {
         replaceBlock(
             dimension,
             location,
-            Math.random() < oreRarity ? "minecraft:stone": chooseFromArray([
-                "minecraft:coal_ore",
-                "minecraft:iron_ore",
-                "minecraft:diamond_ore",
-                "minecraft:emerald_ore",
-                "minecraft:redstone_ore"
+            Math.random() < oreRarity ? "minecraft:stone": chooseFromWeightedArray([
+                [0.3, "minecraft:coal_ore",],
+                [0.3, "minecraft:iron_ore",],
+                [0.2, "minecraft:diamond_ore",],
+                [0.2, "minecraft:emerald_ore",],
+                [0.2, "minecraft:redstone_ore",],
+                [0.3, "minecraft:lapis_ore",],
+                [0.1, "minecraft:coal_block",],
+                [0.1, "minecraft:iron_block",],
+                [0.07, "minecraft:diamond_block",],
+                [0.07, "minecraft:emerald_block",],
+                [0.07, "minecraft:redstone_block",],
+                [0.1, "minecraft:lapis_block",],
+                [0.05, "bao_30k:lucky_block",],
             ])
         );
     }

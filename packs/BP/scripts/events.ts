@@ -8,6 +8,12 @@ import "./events/voidBacteria";
 import spawnBooks from "./events/spawnBooks";
 import spawnCookedFood from "./events/cookedFood";
 import nearbyCorruption from "./events/nearbyCorruption";
+import orbitalLaser from "./events/orbitalLaser";
+import spawnRedstoneItems from "./events/redstoneItems";
+import jebSheepExplosion from "./events/jebSheep";
+import anvilRain from "./events/anvilRain";
+import singleValuableItem from "./events/singleValuableItem";
+import villager from "./events/villager";
 
 export default {
   author: "MACHINE_BUILDER",
@@ -16,6 +22,12 @@ export default {
     nearbyCorruption,
     spawnAllay,
     spawnBooks,
-    spawnCookedFood
+    spawnCookedFood,
+    orbitalLaser,
+    spawnRedstoneItems,
+    jebSheepExplosion,
+    anvilRain,
+    singleValuableItem,
+    villager
   ]
 } as LuckyBlockEventData

@@ -9,6 +9,25 @@ export function chooseFromArray<T>(arr: T[]): T {
     return arr[index];
 }
 
+export function chooseFromWeightedArray<T>(arr: Array<[number, T]>): T {
+    const totalWeight = arr.reduce((sum, [weight]) => sum + weight, 0);
+
+    const random = Math.random() * totalWeight;
+
+    let cumulative = 0;
+
+    for (const [weight, value] of arr) {
+        cumulative += weight;
+
+        if (random < cumulative) {
+            return value;
+        }
+    }
+
+    // Fallback (should never happen unless array is empty / bad weights)
+    return arr[arr.length - 1][1];
+}
+
 export function distanceVector3(a: Vector3, b: Vector3) {
     return Math.sqrt(distanceSquaredVector3(a, b));
 }
